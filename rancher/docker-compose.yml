@@ -1,0 +1,16 @@
+version: '2'
+services:
+  sqi-sp-engine2:
+    image: hmribio/sqi-sp-engine
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  sqi-poc-2:
+    image: hmribio/combine-sp-base
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
