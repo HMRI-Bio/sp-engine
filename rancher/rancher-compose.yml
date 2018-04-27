@@ -3,6 +3,6 @@ services:
   sqi-sp-engine2:
     scale: 1
     start_on_create: true
-  sqi-poc-2:
+  sqi-poc-demo:
     scale: 1
     start_on_create: false
