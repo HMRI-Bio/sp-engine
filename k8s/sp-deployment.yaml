@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shinyproxy
+spec:
+  selector:
+    matchLabels:
+      run: shinyproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: shinyproxy
+    spec:
+      containers:
+      - name: shinyproxy
+        image: hmribio/sqi-sp-engine:k8s-test
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      - name: kube-proxy-sidecar
+        image: wernight/docker-kubectl:latest
+        imagePullPolicy: IfNotPresent
+        command: ["/usr/local/bin/kubectl"]
+        args: ["proxy"]
+        ports:
+        - containerPort: 8001
