@@ -39,7 +39,7 @@ shiny:
   - name: Euler
     display-name: Euler App Pumped Up
     description: Testing we get the right user info
-    docker-cmd: ["R", "-e shiny::runApp(\'/root/euler\',display.mode=\'showcase\')"]
+    docker-cmd: ["R", "-e shiny::runApp(\\'/root/euler\\',display.mode=\\'showcase\\')"]
     docker-image: hmribio/combined-sp-base
     groups: scientists, mathematicians, sqi-viewer
     docker-network: bridge

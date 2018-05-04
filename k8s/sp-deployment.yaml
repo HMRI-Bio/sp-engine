@@ -15,7 +15,7 @@ spec:
       containers:
       - name: shinyproxy
         image: hmribio/sqi-sp-engine:k8s-test
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
       - name: kube-proxy-sidecar
